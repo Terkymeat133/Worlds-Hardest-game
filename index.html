@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mathematical Simulation Matrix</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+        #canvas-frame { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="canvas-frame"></div>
+
+    <!-- Initialize the official Ruffle core engine -->
+    <script src="https://unpkg.com"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("DOMContentLoaded", () => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("canvas-frame");
+            container.appendChild(player);
+            
+            // Targets the exact local file name uploaded in your repository
+            player.load("the_game.swf");
+        });
+    </script>
+</body>
+</html>
