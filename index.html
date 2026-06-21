@@ -11,8 +11,8 @@
 <body>
     <div id="canvas-frame"></div>
 
-    <!-- Initialize the official Ruffle core engine -->
-    <script src="https://unpkg.com"></script>
+    <!-- Switched from unpkg to stable cdnjs framework -->
+    <script src="https://cloudflare.com"></script>
     <script>
         window.RufflePlayer = window.RufflePlayer || {};
         window.addEventListener("DOMContentLoaded", () => {
@@ -21,7 +21,7 @@
             const container = document.getElementById("canvas-frame");
             container.appendChild(player);
             
-            // Targets the exact local file name uploaded in your repository
+            // Confirm this matches your uploaded file name EXACTLY (case-sensitive)
             player.load("the_game.swf");
         });
     </script>
